@@ -23,7 +23,7 @@ Starting from a path and adding random edges, treewidth grows about linearly wit
 
 ![Random edges vs treewidth](results/random_edges.png)
 
-Same number of nodes, different connectivity, different treewidth. Size alone doesn't tell you whether exact optimization is feasible.
+These graphs have the same number of nodes, different connectivity, different treewidth. Hence, protein size does uniquely predict exact optimization feasibility.
 
 ## Protein contact graphs
 
@@ -37,7 +37,7 @@ I built Cα contact graphs (edge if two residues are within a distance cutoff) f
 | 1TIM | 247 | 0.22 | 114 |
 | 1GC1 (chain G) | 297 | 0.16 | 114 |
 
-Density doesn't track treewidth — 1GC1 has the lowest density but one of the highest treewidths. Average degree does: across a cutoff sweep on 1GC1, treewidth and average degree correlate at r = 0.96.
+Density doesn't track treewidth, illustrated by the fact that 1GC1 has the lowest density but one of the highest treewidths. Average degree does: across a cutoff sweep on 1GC1, treewidth and average degree correlate at r = 0.96.
 
 ![Protein treewidth](results/protein_treewidth.png)
 
@@ -50,7 +50,7 @@ On 1GC1, about 72% of contacts are long-range (sequence separation |i − j| > 1
 | full graph | 114 |
 | &#124;i − j&#124; ≤ 12 | 12 |
 
-A protein's long-range contacts, not its length or its local structure, are what make exact Potts optimization intractable. This is the reason the exact solver in my [beyond-native-recovery](https://github.com/avaallwardt/beyond-native-recovery) repo restricts couplings to a sequence-neighbor window: capping |i − j| bounds treewidth, which is what keeps the exact solve feasible. This repo measures the trade-off that move is making.
+A protein's long-range contacts, rather than its length or local structure, make exact Potts optimization intractable. This is the reason the exact solver in my [beyond-native-recovery](https://github.com/avaallwardt/beyond-native-recovery) repo restricts couplings to a sequence-neighbor window: capping |i − j| bounds treewidth, which is what keeps the exact solve feasible. This repo measures the trade-off that move is making.
 
 ## Layout
 
