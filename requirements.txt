@@ -1,0 +1,6 @@
+networkx>=3.0
+numpy>=1.26
+pandas>=2.0
+matplotlib>=3.7
+# needed only for experiments/proteins.py (protein contact graphs)
+biopython>=1.81
