@@ -1,6 +1,6 @@
-# protein-treewidth
+# Graph-Theoretic Analysis of Protein Sequence Design with Potts Models
 
-Exact optimization of a Potts model is exponential in the **treewidth** of its interaction graph, not in the number of variables. For protein sequence design, that graph has one node per residue and an edge between residues that are close in space. So the question for whether exact design is tractable is: what controls a protein contact graph's treewidth?
+Exact optimization of a Potts model is exponential in the **treewidth** of its interaction graph but not in the number of variables. A protein structure can be represented as a graph where each node is a residue and there is an edge between residues that are close in space. Since exact optimization of Potts models are not strictly dependent on the number of residues in a protein, what other metric of a protein that can predict exact solvability? In other words, what controls a protein contact graph's treewidth?
 
 This repo measures that, first on synthetic graphs and then on real protein structures. Treewidth is NP-hard to compute exactly, so I use NetworkX's min-fill-in heuristic, which gives an upper bound.
 
